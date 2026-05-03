@@ -37,3 +37,42 @@ def play_game():
     print("WELCOME TO THE NUMBER GUESSING GAME!")
     print("=" * 50)
     
+     # Setup
+    max_attempts, difficulty = choose_difficulty()
+    secret_number = random.randint(1, 100)
+    attempts = 0
+    wrong_guesses = 0
+    
+    print(f"\nI'm thinking of a number between 1 and 100.")
+    print(f"You have {max_attempts} attempts. Good luck!\n")
+    
+    # Game loop
+    while attempts < max_attempts:
+        try:
+            guess = int(input(f"Attempt {attempts + 1}/{max_attempts} - Enter your guess: "))
+            
+            # Validate range
+            if guess < 1 or guess > 100:
+                print("Please enter a number between 1 and 100.")
+                continue
+            
+            attempts += 1
+            
+            # Check guess
+            if guess == secret_number:
+                print(f"\n🎉 Correct! You guessed {secret_number}!")
+                print(f"You won in {attempts} attempt(s)!")
+                
+                # Save high score
+                name = input("\nEnter your name: ")
+                save_score(name, attempts, difficulty)
+                return
+            
+            elif guess < secret_number:
+                print("Too Low!")
+                wrong_guesses += 1
+            else:
+                print("Too High!")
+                wrong_guesses += 1
+            
+    
