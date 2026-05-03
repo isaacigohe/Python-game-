@@ -60,7 +60,7 @@ def play_game():
             
             # Check guess
             if guess == secret_number:
-                print(f"\n🎉 Correct! You guessed {secret_number}!")
+                print(f"\n Correct! You guessed {secret_number}!")
                 print(f"You won in {attempts} attempt(s)!")
                 
                 # Save high score
