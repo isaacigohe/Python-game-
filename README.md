@@ -6,8 +6,7 @@
 - **Isaac Igohe**
 
 ## . Overview
-- Guess Me is a simple, interactive Python console application where the player tries to guess a randomly generated number within a set number of attempts based on the chosen difficulty.
-- The game tests logic, estimation, and probability while keeping gameplay fun and engaging. It uses Python's built-in random module for number generation and handles user input robustly with proper error checking.
+- Guess Me is a simple, interactive Python console application where the player tries to guess a randomly generated number within a set number of attempts based on the chosen difficulty.The game tests logic, estimation, and probability while keeping gameplay fun and engaging. 
 
 ## . Installation
 Follow these steps to set up and run the project locally:
@@ -27,11 +26,7 @@ python simple_guess_game.py
 ## . Usage
 1. Launch the Game
    - Run the Python file.
-   - You'll be prompted to select a difficulty level:
-     - 1: Easy → 10 tries
-     - 2: Medium → 7 tries
-     - 3: Hard → 5 tries
-
+   
 2. Guess the Number
    - Input guesses between 1 and 100.
    - Receive hints if your guess is too high or too low.
@@ -57,7 +52,7 @@ python simple_guess_game.py
 6. Simple and Lightweight
    - No external dependencies beyond Python's standard library.
 
-## . Tech Stack
+## . Tech 
 - Programming Language: Python 3
 - Random Number Generation: random module
 - File I/O: Built-in file handling
