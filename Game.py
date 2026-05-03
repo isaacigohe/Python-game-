@@ -17,27 +17,27 @@ def choose_difficulty():
             return 5, "Hard"
         else:
             print("Invalid choice. Please select 1, 2, or 3.")
- 
- def get_hint(number):
+
+def get_hint(number):
     """Generate a simple hint"""
     if number % 2 == 0:
         return "Hint: The number is even"
     else:
         return "Hint: The number is odd"
- 
+
 def save_score(name, attempts, difficulty):
     """Save score to a text file"""
     with open("scores.txt", "a") as file:
         file.write(f"{name},{attempts},{difficulty}\n")
     print("Score saved!")
- 
+
 def play_game():
     """Main game function"""
     print("=" * 50)
     print("WELCOME TO THE NUMBER GUESSING GAME!")
     print("=" * 50)
     
-     # Setup
+    # Setup
     max_attempts, difficulty = choose_difficulty()
     secret_number = random.randint(1, 100)
     attempts = 0
@@ -75,4 +75,19 @@ def play_game():
                 print("Too High!")
                 wrong_guesses += 1
             
+            # Give hint after 3 wrong tries
+            if wrong_guesses == 3:
+                print(get_hint(secret_number))
+            
+            print(f"Remaining attempts: {max_attempts - attempts}\n")
+        
+        except ValueError:
+            print("Invalid input. Please enter a number.")
     
+    # Game over
+    print(f"\n Game Over! The number was {secret_number}")
+    print("Better luck next time!")
+
+# Run the game
+if __name__ == "__main__":
+    play_game()
